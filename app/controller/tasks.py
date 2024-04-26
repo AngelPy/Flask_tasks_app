@@ -27,6 +27,25 @@ def show_tasks():
     # en la variable tasks
     return tasks_schema.dump(tasks)
 
+# Busca 1 sola tarea por su id al ser creado. El Id es insertado en la url.
+def get_task_by_id(id):
+
+    # Realiza una consulta a la tabla en donde busca a la tarea por su Id, Id que
+    # es enviado por la url del request.
+    task = Tasks.query.get(id)
+
+    # En caso de no encontrarla se retorna un mensaje indicando que no se logró
+    # encontrar la tarea por el id ingresado.
+    if task is None:
+        return jsonify({
+            "msg": "Couldn't find the task"
+        })
+
+    # Retorna los valores de la nueva tarea encontrada como un .json
+    return task_schema.dump(task), 200
+
+
+
 # Función para crear nuevas tareas.
 def create_task():
 
@@ -51,7 +70,7 @@ def create_task():
     db.session.commit()
 
     # Retorna los valores de la nueva tarea insertada como un .json
-    return task_schema.dump(task), 201
+    return task_schema.dump(task), 200
     
 # Funcion para eliminar tareas.
 def delete_task(id):
