@@ -37,8 +37,8 @@ flask db upgrade
 ## Ejecutar la aplicación:
 
 ### Hay 2 opciones:
- - Escribir el comando flask run --debug para ejecutar la aplicación con el debugger activo
- - Escribir el Comando flask run para ejecutar la aplicación sin el debugger
+ - Escribir el comando `flask run --debug` para ejecutar la aplicación con el debugger activo
+ - Escribir el Comando `flask run` para ejecutar la aplicación sin el debugger
 
 ## Ejecutar los test:
 
