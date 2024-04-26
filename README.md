@@ -40,3 +40,8 @@ flask db upgrade
  - Escribir el comando flask run --debug para ejecutar la aplicación con el debugger activo
  - Escribir el Comando flask run para ejecutar la aplicación sin el debugger
 
+## Ejecutar los test:
+
+1. Con el servidor encendido crear otra terminal de cmd donde actives el entorno virtual.
+2. En la nueva terminal ejecutar el comando `python -m pytest -v -s`
+
