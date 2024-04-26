@@ -6,13 +6,7 @@ api = Blueprint('api', __name__)
 
 @api.route('/', methods=['GET'])
 def get_tasks():
-    if request.method == 'GET':
-        return show_tasks()
-    else:
-        return jsonify({
-            "status": 500,
-            "msg": "Error"
-        })
+    return show_tasks()
 
 @api.route('/insert', methods=['POST'])
 def insert_task():
